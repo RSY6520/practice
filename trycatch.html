@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try catch</title>
+</head>
+<body>
+    <button onclick="message()">view message</button>
+
+    <script>
+        let text = ""; 
+        function message(){
+            try {
+                    addalert("hello");
+                }
+            catch(err){
+                text = "An error was occured.\n\n";
+                text += "Click on OK to continue to this page\n";
+                text += "or Click on Cancel to go on homepage.";
+                if(!confirm(text)){ document.location.href = "https://www.google.com/";}   
+            }
+        }
+    </script>
+</body>
+</html>

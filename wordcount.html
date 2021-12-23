@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <textarea id="evaluatedText" oninput="count(this.value)" ></textarea>
+        <h3 id="wordCount">0</h3>
+
+        <script>
+            function count(text){
+                document.getElementById("wordCount").innerHTML = text.length;
+            }
+        </script>
+    </body>
+</html>

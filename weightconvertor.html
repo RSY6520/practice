@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weight Convertor!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header><h1>Weight Convertor</h1></header>
+        <p id="hint">Type a value in any of the fields to convert between weight measurements:</p>
+        <div class="container">
+            <p>
+                <label for="pound">Pounds: </label>
+                <input id="pound" type="number" placeholder="pounds" oninput="convertFromPounds(this.value)" 
+                onchange="convertFromPounds(this.value)">
+            </p>
+            <p>
+                <label for="kilogram">Kilograms: </label>
+                <input id="kilogram" type="number" placeholder="kilograms" oninput="convertFromKilograms(this.value)"
+                onchange="convertFromKilograms(this.value)">
+            </p>
+            <p>
+                <label for="ounce">Ounce: </label>
+                <input id="ounce" type="number" placeholder="ounce" oninput="convertFromOunces(this.value)"
+                onchange="convertFromOunces(this.value)">
+            </p>
+            <p>
+                <label for="gram">Grams: </label>
+                <input id="gram" type="number" placeholder="grams" oninput="convertFromGrams(this.value)"
+                onchange="convertFromGrams(this.value)">
+            </p>
+            <p>
+                <label for="stone">Stones: </label>
+                <input id="stone" type="number" placeholder="stones" oninput="convertFromStones(this.value)"
+                onchange="convertFromStones(this.value)">
+            </p>
+        </div>
+
+        <script>
+            function convertFromPounds(value){
+                document.getElementById("kilogram").value = value/0.0022046;
+                document.getElementById("ounce").value = value/0.0022046;
+                document.getElementById("gram").value = value/0.0022046;
+                document.getElementById("stone").value = value/0.0022046;
+            }
+            function convertFromKilograms(value){
+                document.getElementById("pound").value = value/0.0022046;
+                document.getElementById("ounce").value = value/0.0022046;
+                document.getElementById("gram").value = value/0.0022046;
+                document.getElementById("stone").value = value/0.0022046;
+            }
+            function convertFromOunces(value){
+                document.getElementById("pound").value = value/0.0022046;
+                document.getElementById("kilogram").value = value/0.0022046;
+                document.getElementById("gram").value = value/0.0022046;
+                document.getElementById("stone").value = value/0.0022046;
+            }
+            function convertFromGrams(value){
+                document.getElementById("pound").value = value/0.0022046;
+                document.getElementById("kilogram").value = value/0.0022046;
+                document.getElementById("ounce").value = value/0.0022046;
+                document.getElementById("stone").value = value/0.0022046;
+            }
+            function convertFromStones(value){
+                document.getElementById("pound").value = value/0.0022046;
+                document.getElementById("kilogram").value = value/0.0022046;
+                document.getElementById("ounce").value = value/0.0022046;
+                document.getElementById("gram").value = value/0.0022046;
+            }
+        </script>
+    </body>
+</html>
