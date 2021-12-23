@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Grocery List</h1>
+<!--input fields -->
+<label for="item-name" >Name</label>
+<input data-ns-test="item-name" id="item-name-input" type="text" placeholder="name">
+<label for="item-price" >Price</label>
+<input data-ns-test="item-price" id="item-price-input" type="number" placeholder="price">
+<button onclick="insertItem()">Add</button>
+<table id="list">
+        <tr>
+             <th>Sr. No.</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <th>grandTotal</th>
+            <th data-ns-test="grandTotal" id="total">0</th>
+        </tr>
+</table>
+<script>
+    let srn = 0;
+let list = [];
+function insertItem() {
+    let name = document.getElementById("item-name-input").value;
+    let price = document.getElementById("item-price-input").value;
+    if(name != "" || price != ""){
+        list.push({nm: name, prc: price});
+    let tr = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let sr = document.createTextNode(srn+1);
+    let item = document.createTextNode(list[srn].nm);
+    let value = document.createTextNode(list[srn].prc);
+    td1.appendChild(sr);
+    td2.appendChild(item);
+    td3.appendChild(value);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    document.getElementById("list").appendChild(tr);
+    let bef = Number(document.getElementById("total").innerHTML);
+    let curr = Number(list[srn].prc);
+    srn++;
+    document.getElementById("total").innerHTML = bef + curr;
+    document.getElementById("item-name-input").value = "";
+    document.getElementById("item-price-input").value = "";
+    }
+}
+</script>
+    
+</body>
+</html>
