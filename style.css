@@ -1,0 +1,28 @@
+header{
+    background-color: rgba(0, 255, 0, 1);
+    width: 50%;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+}
+header h1{
+    padding-top: 10px;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    margin: auto;
+}
+#hint{
+    width: 50%;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-left: 25%;
+    background: rgb(209, 133, 133);
+}
