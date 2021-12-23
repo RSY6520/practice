@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onerror</title>
+</head>
+<body>
+    <h2>onerror in normal function or js syntax.</h2>
+    <p>onerror is an event handler which is used in normal js to handle error.<br>
+    Onerror it calls a function and send <strong>error message captured by event var,<br> 
+    page URL, error trower line no., error thrower function invoker line no., <br>
+    and error thrown message.</strong> as argument.</p>
+    <button onclick="message()">view message</button>
+
+    <script>
+        onerror = handleerror;
+        let text = "";
+        function handleerror(msg, url, line, invoker, thrown){
+            text =  'There was an error on this page.\n\n'
+            text += 'Event captured error: ' + msg + "\n";
+            text += 'Page URL: ' + url + "\n";
+            text += 'Error message thrower line: ' + line + '\n';
+            text += 'Error thrower function invoker(button) line: ' + invoker + "\n";
+            text += 'Error thrown: ' + thrown + "\n\n";
+            text += 'Click on OK to continue.';
+            alert(text);
+            return true;
+        }
+        function message(){
+            aalert("Everything is alright!")
+        }
+    </script>
+    
+</body>
+</html>
